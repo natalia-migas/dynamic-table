@@ -1,0 +1,10 @@
+h2 {
+  margin: 0;
+  padding: 50px 0;
+  text-align: center;
+}
+
+#tableWrapper {
+  max-width: 1500px;
+  margin: 0 auto;
+}
