@@ -114,8 +114,16 @@ data.forEach(obj => {
 
   keys.forEach(key => {
     const th = document.createElement('th');
+    const btnUp = document.createElement('button');
+    const btnDown = document.createElement('button');
     trHead.appendChild(th);
     th.innerHTML = key;
+    th.appendChild(btnDown);
+    btnDown.innerHTML = '&#8744;';
+    btnDown.setAttribute('class', 'btn-down');
+    th.appendChild(btnUp);
+    btnUp.innerHTML = '&#8743;';
+    btnUp.setAttribute('class', 'btn-up');
   });
 
   const tbody = document.createElement('tbody');
@@ -130,4 +138,19 @@ data.forEach(obj => {
         : (td.innerHTML = elem[key]);
     });
   });
+})();
+
+(function sort() {
+  const tr = document.querySelector('tr');
+  tr.addEventListener('click', sortByColumn);
+
+  function sortByColumn(e) {
+    const parentNodeText = e.target.parentElement.textContent;
+    const nodeText = parentNodeText.slice(0, parentNodeText.length - 2);
+    if (e.target.matches('.btn-up')) {
+      console.log(`sort Ascending by ${nodeText}`);
+    } else if (e.target.matches('.btn-down')) {
+      console.log(`sort Descending by ${nodeText}`);
+    }
+  }
 })();

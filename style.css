@@ -1,3 +1,7 @@
+body {
+  font-size: 13px;
+}
+
 h2 {
   margin: 0;
   padding: 50px 0;
@@ -7,4 +11,21 @@ h2 {
 #tableWrapper {
   max-width: 1500px;
   margin: 0 auto;
+}
+
+.table td,
+.table th {
+  padding: 8px;
+}
+
+th > button {
+  font-size: 10px;
+  background-color: transparent;
+  border: 0;
+  font-weight: bold;
+  padding: 0;
+  margin: 0 3px;
+  display: inline-block;
+  cursor: pointer;
+  float: right;
 }
