@@ -75,19 +75,19 @@ const data = [
   }
 ];
 
-function reformatObjectDate(obj, date) {
+function reformatObjDate(obj, date) {
   if (!obj[date]) return;
 
-  const day = obj[date].slice(-4, -2);
-  const month = obj[date].slice(-2);
+  const day = obj[date].slice(-2);
+  const month = obj[date].slice(-4, -2);
   const year = obj[date].slice(0, 4);
-  const reformatedDate = `${month}-${day}-${year}`;
+  const reformatedDate = `${day}-${month}-${year}`;
   obj[date] = reformatedDate;
 }
 
 data.forEach(obj => {
-  reformatObjectDate(obj, 'dateOrder');
-  reformatObjectDate(obj, 'dateDelivery');
+  reformatObjDate(obj, 'dateOrder');
+  reformatObjDate(obj, 'dateDelivery');
 });
 
 (function createTable() {
